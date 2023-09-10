@@ -139,8 +139,7 @@ function HomeSlider({navigation}: {navigation: any}) {
         />
       </View>
     );
-
-}
+  }
 }
 
 export default HomeSlider;

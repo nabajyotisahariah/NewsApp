@@ -38,7 +38,7 @@ function ReviewDetail({route, navigation}: {route: any; navigation: any}) {
   );
   const review: IReview | null = detail ? detail[0] : null;
 
-  console.log('datail ','detail ','news ',detail.length, ' error ',error);
+  console.log('datail ', 'detail ', 'news ', detail.length, ' error ', error);
 
   useEffect(() => {
     console.log('Redux fired.');
@@ -82,8 +82,6 @@ function ReviewDetail({route, navigation}: {route: any; navigation: any}) {
             <Text style={NewsPageStyle.TitleTag}>{review.headline}</Text>
           </View>
 
-
-
           {detail?.[0]?.full_synopsis ? (
             <RenderHtml contentWidth={width} source={{html: review.synopsis}} />
           ) : null}
@@ -120,8 +118,7 @@ function ReviewDetail({route, navigation}: {route: any; navigation: any}) {
           </View>
         </ScrollView>
       );
-    }
-    else {
+    } else {
       return (
         <ScrollView style={NewsPageStyle.NewsDetailContainer}>
           <LottieView

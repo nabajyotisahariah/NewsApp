@@ -1,5 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {Text, View, TouchableOpacity, RefreshControl, SafeAreaView} from 'react-native';
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  RefreshControl,
+  SafeAreaView,
+} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import NewsCard from '../components/NewsCard';
 import LottieView from 'lottie-react-native';
@@ -81,7 +87,7 @@ function ViewCategory({route, navigation}: {route: any; navigation: any}) {
             }}>
             {route.params.catname}
           </Text>
-          {listingNews.length > 0 ?
+          {listingNews.length > 0 ? (
             <View>
               {DataConstant}
 
@@ -125,9 +131,9 @@ function ViewCategory({route, navigation}: {route: any; navigation: any}) {
                   </Text>)
               }*/}
             </View>
-          : (
+          ) : (
             <LottieView
-              style={{"width": 200, "height": 200, "margin": '16%'}}
+              style={{width: 200, height: 200, margin: '16%'}}
               source={require('../assets/loading/newsload1.json')}
               autoPlay
               loop

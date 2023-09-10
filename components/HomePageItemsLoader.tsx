@@ -18,7 +18,9 @@ function HomePostsDisplay({navigation}: {navigation: any}) {
   const [pageCount, UpdatePageCount] = useState(1);
   const [HomePageLimit, SetHomePageLimit] = useState(0);
 
-  const homeNews: INews[] = useSelector((state: StoreToolKitType) => state.news.homeNews);
+  const homeNews: INews[] = useSelector(
+    (state: StoreToolKitType) => state.news.homeNews,
+  );
 
   //const {loading, homeNews, error} = useSelector( (state) => state.news);
   const dispatch: AppDispatchToolKit = useDispatch();
@@ -36,7 +38,6 @@ function HomePostsDisplay({navigation}: {navigation: any}) {
       UpdatePageCount(pageCount => pageCount + 1);
     });
 
-
     return () => {};
   }, []);
 
@@ -49,22 +50,22 @@ function HomePostsDisplay({navigation}: {navigation: any}) {
 
   if (homeNews.length > 1) {
     return (
-        <View>
-          {homeNews.map(function (x: INews) {
-            return (
-              <NewsCard
-                id={'homeNewsId'+x.id}
-                postId={x.postId}
-                title={x.title}
-                image={x.cover_image.url}
-                cat={x.cat}
-                navigation={navigation}
-                key={'homeNewsId'+x.id}
-              />
-            );
-          })}
+      <View>
+        {homeNews.map(function (x: INews) {
+          return (
+            <NewsCard
+              id={'homeNewsId' + x.id}
+              postId={x.postId}
+              title={x.title}
+              image={x.cover_image.url}
+              cat={x.cat}
+              navigation={navigation}
+              key={'homeNewsId' + x.id}
+            />
+          );
+        })}
 
-          {/*HomePageLimit < 1 ? (
+        {/*HomePageLimit < 1 ? (
             <TouchableOpacity style={{alignItems: 'center'}}>
               <Text
                 onPress={() => UpdateCards()}
@@ -99,7 +100,7 @@ function HomePostsDisplay({navigation}: {navigation: any}) {
               No more posts to display
             </Text>
             )*/}
-       </View>
+      </View>
     );
   } else {
     return (
@@ -114,6 +115,5 @@ function HomePostsDisplay({navigation}: {navigation: any}) {
     );
   }
 }
-
 
 export default HomePostsDisplay;
