@@ -1,4 +1,4 @@
-import React from 'react';
+//import React from 'react';
 import {StyleSheet, flex} from 'react-native';
 import constants from '../assets/constants';
 

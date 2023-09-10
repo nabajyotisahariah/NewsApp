@@ -1,5 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {Text, View, RefreshControl, ScrollView, TouchableOpacity} from 'react-native';
+import {
+  Text,
+  View,
+  RefreshControl,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 //import {TouchableOpacity} from 'react-native-gesture-handler';
 import constants from '../assets/constants';
 import NewsCard from './NewsCard';

@@ -137,7 +137,7 @@ export const fetchNewsListingReduxKT =
           responseType: 'full',
         },
       );
-      console.log(" newsResponse ", newsResponse);
+      //console.log(' newsResponse ', newsResponse);
       newsResponse.map(t => {
         temp.push({
           id: t.ottplay_id,

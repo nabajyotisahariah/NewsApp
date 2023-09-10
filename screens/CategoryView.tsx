@@ -33,7 +33,7 @@ function ViewCategory({route, navigation}: {route: any; navigation: any}) {
   );
   const dispatch = useDispatch();
 
-  console.log("listingNews ",listingNews);
+  //console.log('listingNews ', listingNews);
 
   const onRefresh = React.useCallback(() => {
     //   setRefreshing(true);
@@ -57,7 +57,7 @@ function ViewCategory({route, navigation}: {route: any; navigation: any}) {
   };
 
   const DataConstant = listingNews.map(function (x: INews) {
-    console.log("x ",x);
+   // console.log('x ', x);
     return (
       <NewsCard
         id={`categoryNewsId-${route.params.catname}-${x.id}`}
