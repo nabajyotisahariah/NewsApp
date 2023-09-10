@@ -5,8 +5,8 @@ import {
   TouchableOpacity,
   RefreshControl,
   SafeAreaView,
+  ScrollView,
 } from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
 import NewsCard from '../components/NewsCard';
 import LottieView from 'lottie-react-native';
 import constants from '../assets/constants';
@@ -22,9 +22,9 @@ const wait = (timeout: any) => {
 
 function ViewCategory({route, navigation}: {route: any; navigation: any}) {
   //const ViewCategory = ({route, navigation}) => {
-  const [AllPostData, SetPostData] = useState([]);
+  //const [AllPostData, SetPostData] = useState([]);
   const [PostPageCount, SetPostPageCount] = useState(1);
-  const [PostLimitReached, SetLimitReached] = useState(0);
+  //const [PostLimitReached, SetLimitReached] = useState(0);
 
   const [refreshing, setRefreshing] = useState(false);
 
@@ -32,6 +32,8 @@ function ViewCategory({route, navigation}: {route: any; navigation: any}) {
     (state: StoreToolKitType) => state.news,
   );
   const dispatch = useDispatch();
+
+  console.log("listingNews ",listingNews);
 
   const onRefresh = React.useCallback(() => {
     //   setRefreshing(true);
@@ -55,7 +57,7 @@ function ViewCategory({route, navigation}: {route: any; navigation: any}) {
   };
 
   const DataConstant = listingNews.map(function (x: INews) {
-    //console.log("x ",x);
+    console.log("x ",x);
     return (
       <NewsCard
         id={`categoryNewsId-${route.params.catname}-${x.id}`}

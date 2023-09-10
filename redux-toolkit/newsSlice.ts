@@ -120,7 +120,7 @@ export const fetchNewsHomeReduxToolKit =
 export const fetchNewsListingReduxKT =
   (page = 1, limit = 5) =>
   async (dispatch: AppDispatchToolKit) => {
-    console.log('fetchNewsListing ', page);
+    console.log('fetchNewsListingReduxKT ', page);
 
     try {
       dispatch(setLoading(true));
@@ -137,7 +137,7 @@ export const fetchNewsListingReduxKT =
           responseType: 'full',
         },
       );
-      // console.log(" newsResponse ", newsResponse);
+      console.log(" newsResponse ", newsResponse);
       newsResponse.map(t => {
         temp.push({
           id: t.ottplay_id,

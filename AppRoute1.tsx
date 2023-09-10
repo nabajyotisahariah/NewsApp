@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 import ErrorBoundary from './components/ErrorBoundary';
 import storeToolKit from './redux-toolkit/store';
 // import at the very top of everything.
-//import "./ignoreWarnings";
+//import './ignoreWarnings';
 import {LogBox} from 'react-native';
 
 //import { NODE_ENV, API_URL } from "@env";

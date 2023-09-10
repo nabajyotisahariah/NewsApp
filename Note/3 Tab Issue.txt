@@ -49,3 +49,12 @@ App.js
 
 // import at the very top of everything.
 import "../ignoreWarnings";
+
+--------------------------------
+https://www.npmjs.com/package/patch-package#why-use-postinstall-postinstall-with-yarn
+
+patch-package lets app authors instantly make and keep fixes to npm dependencies. It's a vital band-aid for those of us living on the bleeding edge.
+
+"scripts": {
++  "postinstall": "patch-package"
+ }

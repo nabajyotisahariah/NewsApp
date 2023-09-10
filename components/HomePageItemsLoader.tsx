@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {Text, View, RefreshControl} from 'react-native';
-import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
+import {Text, View, RefreshControl, ScrollView, TouchableOpacity} from 'react-native';
+//import {TouchableOpacity} from 'react-native-gesture-handler';
 import constants from '../assets/constants';
 import NewsCard from './NewsCard';
 import LottieView from 'lottie-react-native';
@@ -9,12 +9,12 @@ import {useSelector, useDispatch} from 'react-redux';
 //import {fetchNewsHome} from '../redux/newsAction';
 //import { AppDispatch, StoreType } from '../redux/store';
 import {INews} from '../redux/newsAction';
-import {setHome, fetchNewsHomeReduxToolKit} from '../redux-toolkit/newsSlice';
+import {fetchNewsHomeReduxToolKit} from '../redux-toolkit/newsSlice';
 import {AppDispatchToolKit, StoreToolKitType} from '../redux-toolkit/store';
 
 function HomePostsDisplay({navigation}: {navigation: any}) {
   //function HomePostsDisplay({navigation}) {
-  const [posts, setPosts] = useState([]);
+  //const [posts, setPosts] = useState([]);
   const [pageCount, UpdatePageCount] = useState(1);
   const [HomePageLimit, SetHomePageLimit] = useState(0);
 
@@ -65,41 +65,41 @@ function HomePostsDisplay({navigation}: {navigation: any}) {
           );
         })}
 
-        {/*HomePageLimit < 1 ? (
-            <TouchableOpacity style={{alignItems: 'center'}}>
-              <Text
-                onPress={() => UpdateCards()}
-                style={{
-                  backgroundColor: constants.LIGHT_THEME_PRIMARY_COLOR,
-                  width: 100,
-                  textAlign: 'center',
-                  padding: 10,
-                  color: '#FFFFFF',
-                  fontFamily: constants.PRIMARY_FONT_SEMI_BOLD,
-                  borderRadius: 10,
-                  marginBottom: 20,
-                  shadowColor: 'white',
-                  shadowOffset: {
-                    width: 0,
-                    height: 12,
-                  },
-                  shadowOpacity: 0.58,
-                  shadowRadius: 16.0,
-                  elevation: 9,
-                }}>
-                Load More
-              </Text>
-            </TouchableOpacity>
-          ) : (
+        {HomePageLimit < 1 ? (
+          <TouchableOpacity style={{alignItems: 'center'}}>
             <Text
+              onPress={() => UpdateCards()}
               style={{
-                fontFamily: constants.PRIMARY_FONT_MEDIUM,
+                backgroundColor: constants.LIGHT_THEME_PRIMARY_COLOR,
+                width: 100,
                 textAlign: 'center',
+                padding: 10,
+                color: '#FFFFFF',
+                fontFamily: constants.PRIMARY_FONT_SEMI_BOLD,
+                borderRadius: 10,
                 marginBottom: 20,
+                shadowColor: 'white',
+                shadowOffset: {
+                  width: 0,
+                  height: 12,
+                },
+                shadowOpacity: 0.58,
+                shadowRadius: 16.0,
+                elevation: 9,
               }}>
-              No more posts to display
+              Load More
             </Text>
-            )*/}
+          </TouchableOpacity>
+        ) : (
+          <Text
+            style={{
+              fontFamily: constants.PRIMARY_FONT_MEDIUM,
+              textAlign: 'center',
+              marginBottom: 20,
+            }}>
+            No more posts to display
+          </Text>
+        )}
       </View>
     );
   } else {

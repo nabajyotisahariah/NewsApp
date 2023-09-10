@@ -3,7 +3,7 @@ import {Text, View, Image, TouchableOpacity} from 'react-native';
 import {HomepageStyle} from '../assets/StyleSheet';
 
 const NewsCard = props => {
- // console.log('NewsCard props ', props);
+  // console.log('NewsCard props ', props);
   return (
     <TouchableOpacity
       onPress={() =>
