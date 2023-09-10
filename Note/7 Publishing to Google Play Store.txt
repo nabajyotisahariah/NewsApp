@@ -1,0 +1,63 @@
+React Native Tutorial #35 - Generating APK & Android App Bundle for Google Play Store
+		https://www.youtube.com/watch?v=5tgcogEoIiQ
+
+================================
+
+Android requires that all apps be digitally signed with a certificate before they can be installed
+
+https://reactnative.dev/docs/signed-apk-android
+
+Generating an upload key
+You can generate a private signing key using keytool.
+
+On Windows keytool must be run from C:\Program Files\Java\jdkx.x.x_x\bin, as administrator.
+
+keytool -genkeypair -v -storetype PKCS12 -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+
+
+C:\Program Files\Java\jdk-11.0.17\bin>keytool -genkeypair -v -storetype PKCS12 -keystore newstvapp-upload-key.keystore -alias newstvapp-key-alias -keyalg RSA -keysize 2048 -validity 10000
+Enter keystore password: Test@123
+Re-enter new password:
+What is your first and last name?
+  [Unknown]:  Nabajyoti Sahariah
+What is the name of your organizational unit?
+  [Unknown]:  Channel V
+What is the name of your organization?
+  [Unknown]:  V
+What is the name of your City or Locality?
+  [Unknown]:  Noida
+What is the name of your State or Province?
+  [Unknown]:  UP
+What is the two-letter country code for this unit?
+  [Unknown]:  IN
+Is CN=Nabajyoti Sahariah, OU=Channel V, O=V, L=Noida, ST=UP, C=IN correct?
+  [no]:  yes
+
+Generating 2,048 bit RSA key pair and self-signed certificate (SHA256withRSA) with a validity of 10,000 days
+        for: CN=Nabajyoti Sahariah, OU=Channel V, O=V, L=Noida, ST=UP, C=IN
+[Storing newstvapp-upload-key.keystore]
+
+======================================================
+
+Setting up Gradle variables
+1. Place the my-upload-key.keystore file under the android/app directory in your project folder.
+2. Edit the file ~/.gradle/gradle.properties or android/gradle.properties, and add the following (replace ***** with the correct keystore password, alias and key password),
+      MYAPP_UPLOAD_STORE_FILE=my-upload-key.keystore
+      MYAPP_UPLOAD_KEY_ALIAS=my-key-alias
+      MYAPP_UPLOAD_STORE_PASSWORD=*****
+      MYAPP_UPLOAD_KEY_PASSWORD=*****
+==============================================
+
+
+Nabajyoti Sahariah@LTCDELnd13157r3 MINGW64 /d/GitCoder/SampleProject/reactnativesample__ (master)
+$ ll android/app/build/outputs/apk/debug/
+total 61133
+-rw-r--r-- 1 Nabajyoti Sahariah 197121 62598766 Aug 29 00:23 app-debug.apk
+-rw-r--r-- 1 Nabajyoti Sahariah 197121      368 Aug 29 00:23 output-metadata.json
+
+Nabajyoti Sahariah@LTCDELnd13157r3 MINGW64 /d/GitCoder/SampleProject/reactnativesample__ (master)
+$ ll android/app/build/outputs/bundle/release/
+total 23112
+-rw-r--r-- 1 Nabajyoti Sahariah 197121 23664904 Aug 29 00:43 app-release.aab
+
+

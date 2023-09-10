@@ -1,0 +1,62 @@
+react native change project name
+
+https://stackoverflow.com/questions/32830046/renaming-a-react-native-project
+
+https://www.youtube.com/watch?v=v3X7RKvy_8I
+
+Rename react-native app with just one command react-native-rename
+
+$ npx react-native-rename@latest "NewsTV"
+ios\NewsTV RENAMED
+ios\NewsTVTests RENAMED
+ios\NewsTVTests\NewsTVTests.m RENAMED
+ios\NewsTV.xcodeproj RENAMED
+ios\NewsTV.xcodeproj\xcshareddata\xcschemes\NewsTV.xcscheme RENAMED
+ios\Podfile UPDATED (2 matches)
+ios\NewsTV\AppDelegate.mm UPDATED (1 match)
+ios\NewsTV.xcodeproj\project.pbxproj UPDATED (93 matches)
+ios\NewsTV.xcodeproj\xcshareddata\xcschemes\NewsTV.xcscheme UPDATED (10 matches)
+ios\NewsTVTests\NewsTVTests.m NOT UPDATED (0 matches)
+ios\NewsTV.xcodeproj\project.pbxproj UPDATED (52 matches)
+ios\NewsTVTests\NewsTVTests.m UPDATED (2 matches)
+ios\NewsTV.xcodeproj\xcshareddata\xcschemes\NewsTV.xcscheme UPDATED (2 matches)
+ios\NewsTV.xcodeproj\project.pbxproj UPDATED (22 matches)
+ios\NewsTV.xcodeproj\project.pbxproj UPDATED (0 matches)
+ios\NewsTV\LaunchScreen.storyboard UPDATED (1 match)
+ios\NewsTV\Info.plist UPDATED
+android\settings.gradle UPDATED (1 match)
+android\app\src\main\java\com\awesomeproject\MainActivity.java UPDATED (1 match)
+android\app\build.gradle NOT UPDATED (0 matches)
+android\app\src\main\res\values\strings.xml UPDATED
+index.js NOT UPDATED (0 matches)
+package.json UPDATED (1 match)
+app.json UPDATED (4 matches)
+Done removing builds.
+
+SUCCESS! 🎉 🎉 🎉 Your app has been renamed to "NewsTV".
+
+- Make sure to check old .xcodeproj and .xcworkspace in ios folder, please delete them manually.
+- Please make sure to run "npx pod-install" and "watchman watch-del-all" before running the app.
+
+If you like this tool, please give it a star on GitHub: https://github.com/junedomingo/react-native-rename
+
+
+
+A new version of "react-native-rename" is available.
+Current version: 3.2.12
+Latest version: 3.2.13
+You can update by running: npm install -g react-native-rename.
+
+=================================================================================
+
+
+react native how to change project logo
+
+https://www.youtube.com/watch?v=z6AhMj-ksvw
+
+Create the android & iOS image via https://makeappicon.com/ via uploading a image size 1536 x 1536
+
+For Android changes over here D:\GitCoder\SampleProject\reactnativesample__\android\app\src\main\res
+    Apart from the drawable & values folder
+
+-----------------------------------------------------------------------------    

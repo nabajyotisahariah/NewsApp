@@ -1,0 +1,18 @@
+Creating a new application
+If you previously installed a global react-native-cli package, please remove it as it may cause unexpected issues:
+
+    npm uninstall -g react-native-cli @react-native-community/cli
+
+Let's create a new React Native project called "AwesomeProject":
+    npx react-native@latest init AwesomeProject
+
+
+Android development environment
+
+1. Install Android Studio
+Download and install Android Studio. While on Android Studio installation wizard, make sure the boxes next to all of the following items are checked:
+
+Android SDK
+Android SDK Platform
+Android Virtual Device
+If you are not already using Hyper-V: Performance (Intel ® HAXM) (See here for AMD or Hyper-V)

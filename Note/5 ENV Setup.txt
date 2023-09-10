@@ -1,0 +1,68 @@
+https://dev.to/bhatvikrant/how-to-add-environment-variables-in-a-react-native-project-with-ts-2ne5
+https://www.npmjs.com/package/react-native-dotenv
+
+yarn add react-native-dotenv
+yarn add -D @types/react-native-dotenv
+
+
+update your babel.config.js
+This blogpost uses an expo managed project, hence the babel.config.js will look like
+module.exports = function (api) {
+    api.cache(true);
+    return {
+        presets: ["babel-preset-expo"],
+        plugins: [
+            [
+                "module:react-native-dotenv",
+                {
+                    moduleName: "@env",
+                    path: ".env",
+                },
+            ],
+        ],
+    };
+};
+
+
+here, moduleName is the alias we can give to react-native-dotenv library so we can import like:
+import { ENV_VAR } from "@env" 
+instead of:
+import { ENV_VAR } from "react-native-dotenv" 
+
+
+STEP 3: Create a .env file in the root directory and add your environment variable
+ENV_VAR=some-secret-value
+
+STEP 4: Use the environment variable by importing it
+import { ENV_VAR } from "@env" 
+
+STEP 5: Add typescript support
+If you are using Typescript in your project, so you must have observed that typescript is yelling at you in STEP 4.
+To fix this, we will create an env.d.ts file in the root directory with the following content:
+declare module '@env' {
+    export const ENV_VAR: string;
+}
+
+After this, you also need to update your tsconfig.json file with:
+{
+    "extends": "expo/tsconfig.base",
+    "compilerOptions": {
+        "strict": true
+    },
+    "typeRoots": ["./types"] // <------ you need to add this
+}
+
+And now we are done!
+
+https://stackoverflow.com/questions/66296727/enviroment-variable-at-react-native-does-not-working-using-typescript
+
+'module:react-native-dotenv',
+    {
+      moduleName: '@env',
+      path: '.env',
+      whitelist: ['MARVEL_API', 'MARVEL_PUBLIC_KEY', 'MARVEL_PRIVATE_KEY'],
+      safe: false,
+      allowUndefined: true,
+    },
+
+     yarn start --reset-cache

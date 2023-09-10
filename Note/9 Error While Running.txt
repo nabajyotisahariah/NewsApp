@@ -1,0 +1,17 @@
+info Reloading app...
+ BUNDLE  ./index.js
+
+ ERROR  Error: React Refresh runtime should not be included in the production bundle., js engine: hermes
+ LOG  Running "NewsTV" with {"rootTag":51}
+ ERROR  Error: React Refresh runtime should not be included in the production bundle., js engine: hermes
+ ERROR  TypeError: Cannot read property 'render' of undefined, js engine: hermes
+
+https://stackoverflow.com/questions/61961827/error-react-refresh-runtime-should-not-be-included-in-the-production-builds
+
+Go into settings and disable JS DEV MODE
+=======================================================
+
+//https://github.com/facebook/react-native/issues/32952
+//npm start -- --reset-cache
+//npx react-native start --reset-cache
+ 

@@ -1,0 +1,7 @@
+
+
+Could not find a declaration file for module 'react-native-snap-carousel'. 'd:/GitCoder/SampleProject/reactnativesample__/node_modules/react-native-snap-carousel/src/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/react-native-snap-carousel` if it exists or add a new declaration (.d.ts) file containing `declare module 'react-native-snap-carousel';`ts(7016)
+
+
+  
