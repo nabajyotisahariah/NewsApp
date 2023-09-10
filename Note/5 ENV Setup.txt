@@ -7,6 +7,8 @@ yarn add -D @types/react-native-dotenv
 
 update your babel.config.js
 This blogpost uses an expo managed project, hence the babel.config.js will look like
+
+By expo
 module.exports = function (api) {
     api.cache(true);
     return {
@@ -22,6 +24,21 @@ module.exports = function (api) {
         ],
     };
 };
+
+Or By React Native
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: [
+    [
+        "module:react-native-dotenv",
+        {
+            moduleName: "@env",
+            path: ".env",
+        },
+    ],
+  ],
+};
+
 
 
 here, moduleName is the alias we can give to react-native-dotenv library so we can import like:
@@ -66,3 +83,7 @@ https://stackoverflow.com/questions/66296727/enviroment-variable-at-react-native
     },
 
      yarn start --reset-cache
+
+=====================================
+https://github.com/luggit/react-native-config
+
