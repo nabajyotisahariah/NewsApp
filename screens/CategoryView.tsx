@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Text, View, TouchableOpacity, RefreshControl} from 'react-native';
+import {Text, View, TouchableOpacity, RefreshControl, SafeAreaView} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import NewsCard from '../components/NewsCard';
 import LottieView from 'lottie-react-native';
@@ -64,76 +64,78 @@ function ViewCategory({route, navigation}: {route: any; navigation: any}) {
   });
 
   return (
-    <ScrollView
-      refreshControl={
-        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-      }>
-      <View>
-        <Text
-          style={{
-            marginTop: 22,
-            marginLeft: 20,
-            textAlign: 'left',
-            fontFamily: constants.PRIMARY_FONT_BOLD,
-            fontSize: 24,
-            marginBottom: 40,
-          }}>
-          {route.params.catname}
-        </Text>
-        {listingNews.length > 0 ?
-          <View>
-            {DataConstant}
+    <SafeAreaView>
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }>
+        <View>
+          <Text
+            style={{
+              marginTop: 22,
+              marginLeft: 20,
+              textAlign: 'left',
+              fontFamily: constants.PRIMARY_FONT_BOLD,
+              fontSize: 24,
+              marginBottom: 40,
+            }}>
+            {route.params.catname}
+          </Text>
+          {listingNews.length > 0 ?
+            <View>
+              {DataConstant}
 
-            {/*listingNews < 1 ? (*/}
-            <TouchableOpacity
-              style={{
-                alignItems: 'center',
-              }}>
-              <Text
-                onPress={() => UpdateCards()}
+              {/*listingNews < 1 ? (*/}
+              <TouchableOpacity
                 style={{
-                  backgroundColor: '#D7263D',
-                  width: 100,
-                  textAlign: 'center',
-                  padding: 10,
-                  color: '#FFFFFF',
-                  fontFamily: constants.PRIMARY_FONT_MEDIUM,
-                  borderRadius: 10,
-                  marginBottom: 20,
-                  shadowColor: 'white',
-                  shadowOffset: {
-                    width: 0,
-                    height: 12,
-                  },
-                  shadowOpacity: 0.58,
-                  shadowRadius: 16.0,
-                  elevation: 9,
+                  alignItems: 'center',
                 }}>
-                Load More
-              </Text>
-            </TouchableOpacity>
-            {/*) : (
-              // Else
-              <Text
-                style={{
-                  fontFamily: constants.PRIMARY_FONT_BOLD,
-                  textAlign: 'center',
-                  marginBottom: 20,
-                }}>
-                No more posts to display
-                </Text>)
-            }*/}
-          </View>
-         : (
-          <LottieView
-            style={{"width": 200, "height": 200, "margin": '16%'}}
-            source={require('../assets/loading/newsload1.json')}
-            autoPlay
-            loop
-          />
-        )}
-      </View>
-    </ScrollView>
+                <Text
+                  onPress={() => UpdateCards()}
+                  style={{
+                    backgroundColor: '#D7263D',
+                    width: 100,
+                    textAlign: 'center',
+                    padding: 10,
+                    color: '#FFFFFF',
+                    fontFamily: constants.PRIMARY_FONT_MEDIUM,
+                    borderRadius: 10,
+                    marginBottom: 20,
+                    shadowColor: 'white',
+                    shadowOffset: {
+                      width: 0,
+                      height: 12,
+                    },
+                    shadowOpacity: 0.58,
+                    shadowRadius: 16.0,
+                    elevation: 9,
+                  }}>
+                  Load More
+                </Text>
+              </TouchableOpacity>
+              {/*) : (
+                // Else
+                <Text
+                  style={{
+                    fontFamily: constants.PRIMARY_FONT_BOLD,
+                    textAlign: 'center',
+                    marginBottom: 20,
+                  }}>
+                  No more posts to display
+                  </Text>)
+              }*/}
+            </View>
+          : (
+            <LottieView
+              style={{"width": 200, "height": 200, "margin": '16%'}}
+              source={require('../assets/loading/newsload1.json')}
+              autoPlay
+              loop
+            />
+          )}
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 

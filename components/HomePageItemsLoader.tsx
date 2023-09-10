@@ -49,7 +49,6 @@ function HomePostsDisplay({navigation}: {navigation: any}) {
 
   if (homeNews.length > 1) {
     return (
-      <ScrollView>
         <View>
           {homeNews.map(function (x: INews) {
             return (
@@ -100,8 +99,7 @@ function HomePostsDisplay({navigation}: {navigation: any}) {
               No more posts to display
             </Text>
             )*/}
-        </View>
-      </ScrollView>
+       </View>
     );
   } else {
     return (
