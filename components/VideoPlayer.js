@@ -26,24 +26,24 @@ const VideoPlayer = ({_uri, _type, _poster}) => {
 
   //console.log("videoPlayer  currentTime ",currentTime, " paused ",paused);
 
-  
+
   // useEffect(()=>{
   //   onLoadStart();
   //   videoPlayer.current.uri = "";
-  //   videoPlayer.current.uri = _uri; 
-  //   videoPlayer.current.poster = _poster;     
+  //   videoPlayer.current.uri = _uri;
+  //   videoPlayer.current.poster = _poster;
   //   console.log("useEffect _uri ",_uri," videopla ",videoPlayer.current)
   // },[_uri]);
 
   const onSeek = seek => {
     //Handler for change in seekbar
-    console.log("onSeek ",seek);
+    console.log('onSeek ',seek);
     videoPlayer.current.seek(seek);
   };
 
   const onPaused = playerState => {
     //Handler for Video Pause
-    console.log("onPaused ",paused," playerState ",playerState);
+    console.log('onPaused ',paused,' playerState ',playerState);
     setPaused(!paused);
     setPlayerState(playerState);
 
@@ -51,7 +51,7 @@ const VideoPlayer = ({_uri, _type, _poster}) => {
 
   const onReplay = () => {
     //Handler for Replay
-    console.log("onReplay ");
+    console.log('onReplay ');
     setPlayerState(PLAYER_STATES.PLAYING);
     videoPlayer.current.seek(0);
   };
@@ -65,7 +65,7 @@ const VideoPlayer = ({_uri, _type, _poster}) => {
   };
 
   const onLoad = data => {
-    console.log("onLoad ",data);
+    console.log('onLoad ',data);
     setDuration(data.duration);
     setIsLoading(false);
   };
@@ -118,29 +118,31 @@ const VideoPlayer = ({_uri, _type, _poster}) => {
           //uri: 'https://5b48d7e1b4bce.streamlock.net/pratidintime/pratidintime/chunklist_w1369844922.m3u8', //Pratidin
           //uri: "https://5b48d7e1b4bce.streamlock.net/myapp/newslive/chunklist_w1991843395.m3u8"//News Live
           //uri: "https://nw18live.cdn.jio.com/bpk-tv/CNN_News18_NW18_MOB/output01/CNN_News18_NW18_MOB-audio_33635_eng=33600-video=148000.m3u8"
-          uri: _uri
+          uri: _uri,
         }}
        // poster="https://www.pratidintime.com/favicon.ico" //Pratidin
-       // poster="https://newslivetv.com/wp-content/uploads/2022/07/news-live-logo-2-300x131.png" //Pratidin 
-        poster={_poster}       
+       // poster="https://newslivetv.com/wp-content/uploads/2022/07/news-live-logo-2-300x131.png" //Pratidin
+        poster={_poster}
         style={styles.mediaPlayer}
         volume={10}
+        controls={false}
       />
-      {_type==="live" ?
-          paused ? <Button onPress={()=> onPaused()} title='Play'/> :<Button onPress={()=> onPaused()} title='Pause'/>
-        :<MediaControls
-        duration={duration}
-        isLoading={isLoading}
-        mainColor="#333"
-        onFullScreen={onFullScreen}
-        onPaused={onPaused}
-        onReplay={onReplay}
-        onSeek={onSeek}
-        onSeeking={onSeeking}
-        playerState={playerState}
-        progress={currentTime}
-        toolbar={renderToolbar()}
-      /> }
+      {_type === 'live' ?
+          paused ? <Button onPress={()=> onPaused()} title="Play"/> : <Button onPress={()=> onPaused()} title="Pause"/>
+        : 
+        <MediaControls
+          duration={duration}
+          isLoading={isLoading}
+          mainColor="#333"
+          onFullScreen={onFullScreen}
+          onPaused={onPaused}
+          onReplay={onReplay}
+          onSeek={onSeek}
+          onSeeking={onSeeking}
+          playerState={playerState}
+          progress={currentTime}
+          toolbar={renderToolbar()}
+        /> }
     </View>
   );
 };
@@ -165,7 +167,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     justifyContent: 'center',
     height: 200,
-    width: "100%",
+    width: '100%',
   },
 });
 

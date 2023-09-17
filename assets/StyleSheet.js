@@ -80,8 +80,8 @@ const CategoriesStyleSheet = StyleSheet.create({
     display: flex,
     flexWrap: 'wrap',
     flexDirection: 'row',
-    alignItems:"center",
-    textAlign:"justify"
+    alignItems:'center',
+    textAlign:'justify',
   },
 
   heading: {
