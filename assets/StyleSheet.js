@@ -60,6 +60,7 @@ const HomepageStyle = StyleSheet.create({
   AppTitle: {
     fontFamily: constants.PRIMARY_FONT_BLACK,
     fontSize: 18,
+    fontWeight:'bold',
     padding: 1,
   },
 });
@@ -74,6 +75,13 @@ const CategoriesStyleSheet = StyleSheet.create({
     display: flex,
     flexWrap: 'wrap',
     flexDirection: 'row',
+  },
+  AllCategorieTagsVideo: {
+    display: flex,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    alignItems:"center",
+    textAlign:"justify"
   },
 
   heading: {
@@ -90,6 +98,22 @@ const CategoriesStyleSheet = StyleSheet.create({
     backgroundColor: constants.LIGHT_THEME_BG,
     margin: 18,
     padding: 20,
+    shadowColor: constants.LIGHT_THEME_BG,
+    shadowOffset: {
+      width: 0,
+      height: 12,
+    },
+    shadowOpacity: 0.58,
+    shadowRadius: 16.0,
+    elevation: 9,
+    // width: 130,
+  },
+  TagContainerVideo: {
+    borderRadius: 10,
+    flexBasis: '40%',
+    backgroundColor: constants.LIGHT_THEME_LIGHT_BLUE_BG,
+    margin: 5,
+    padding: 5,
     shadowColor: constants.LIGHT_THEME_BG,
     shadowOffset: {
       width: 0,
