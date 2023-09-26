@@ -7,14 +7,14 @@ import constants from '../assets/constants';
 import {NavigationContainer} from '@react-navigation/native';
 
 // Screens
-import Home from '../screens/home';
-import Categories from '../screens/categories';
-import Settings from './../screens/Settings';
-import NewsDetail from '../screens/NewsDetail';
+import HomeScreen from '../screens/HomeScreen';
+import Categories from '../screens/CategoryScreen';
+import Settings from '../screens/SettingsScreen';
+import NewsDetail from '../screens/NewsDetailScreen';
 import HomePostsDisplay from '../components/HomePageItemsLoader';
 import HomeSlider from '../components/HomeSlider';
-import CategoryView from '../screens/CategoryView';
-import ReviewDetail from '../screens/ReviewDetail';
+import CategoryView from '../screens/CategoryDetailScreen';
+import ReviewDetail from '../screens/ReviewDetailScreen';
 
 // Stacks
 const HomeStack = createNativeStackNavigator();
@@ -30,7 +30,7 @@ function HomeStackScreen() {
     <HomeStack.Navigator initialRouteName="HomeTab">
       <HomeStack.Screen
         name="HomeTab"
-        component={Home}
+        component={HomeScreen}
         options={{
           headerShown: false,
           cardStyle: {backgroundColor: constants.LIGHT_THEME_BG},
