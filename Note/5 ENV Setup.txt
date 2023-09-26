@@ -1,5 +1,18 @@
+from the documentation of react-native-config which is what Knex is probably using here:
+
+https://www.scaler.com/topics/react-native-config/
+
+$ ENVFILE=.env.staging react-native run-ios           # bash
+$ SET ENVFILE=.env.staging && react-native run-ios    # windows
+$ env:ENVFILE=".env.staging"; react-native run-ios    # powershell
+===========================================================================
+
+
 https://dev.to/bhatvikrant/how-to-add-environment-variables-in-a-react-native-project-with-ts-2ne5
 https://www.npmjs.com/package/react-native-dotenv
+
+
+
 
 yarn add react-native-dotenv
 yarn add -D @types/react-native-dotenv

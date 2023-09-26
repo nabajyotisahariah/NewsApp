@@ -201,7 +201,14 @@ const MyTabs = () => {
 export default function MyNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Tabs">
+      <Stack.Navigator initialRouteName="Tabs" screenOptions={{
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            textAlign: 'center',
+            alignSelf: 'center',
+            flex: 1,
+          }
+      }}>
         <Stack.Screen
           name="StackNewsDetail"
           options={{headerShown: false}}

@@ -1,8 +1,11 @@
-import axios, {AxiosResponse} from 'axios';
-import {INews} from './newsAction';
-import {IReview} from './reviewAction';
+import axios, { AxiosResponse } from 'axios';
+import { INews } from './newsAction';
+import { IReview } from './reviewAction';
 
 //import { NODE_ENV, API_URL } from "@env";
+import Config from "react-native-config";
+
+console.log("ApiTS Config ", Config, " NODE_ENV ", Config.NODE_ENV, " =API_URL= ", Config.API_URL);
 
 const config = {
   headers: {
@@ -25,14 +28,8 @@ const axiosObject = axios.create({
 
 console.log('axiosObject ', axiosObject);
 export const get = <T>(url: string, type = 'news'): Promise<T> => {
-  // console.log(
-  //   'api.get NODE_ENV ',
-  //   NODE_ENV,
-  //   ' =API_URL= ',
-  //   API_URL,
-  //   ' url ',
-  //   url,
-  // );
+  console.log("ApiTS.GET Config ", Config, " NODE_ENV ", Config.NODE_ENV, " =API_URL= ", Config.API_URL);
+
 
   return axiosObject
     .get(url, config)
@@ -61,14 +58,8 @@ export const get = <T>(url: string, type = 'news'): Promise<T> => {
 };
 
 export const post = <T>(url: string, data = {}, type = 'news'): Promise<T> => {
-  // console.log(
-  //   'Api.post NODE_ENV ',
-  //   NODE_ENV,
-  //   ' =API_URL= ',
-  //   API_URL,
-  //   ' url ',
-  //   url,
-  // );
+  console.log("ApiTS.POST Config ", Config, " NODE_ENV ", Config.NODE_ENV, " =API_URL= ", Config.API_URL);
+
 
   //console.log(" axios ", axios, " ur; ", url, " data ", data)
   return axiosObject
